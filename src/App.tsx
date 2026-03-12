@@ -9,6 +9,15 @@ const bgAlt = '#fdf6f4'
 const textColor = '#2d2d2d'
 const muted = '#999'
 
+// SVGウェーブ区切り
+const Wave = ({ from, to, flip = false }: { from: string; to: string; flip?: boolean }) => (
+  <div style={{ background: from, lineHeight: 0, overflow: 'hidden', transform: flip ? 'scaleY(-1)' : 'none' }}>
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '100%' }}>
+      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill={to} />
+    </svg>
+  </div>
+)
+
 function App() {
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", background: '#fff', color: textColor, minHeight: '100vh', position: 'relative' }}>
@@ -116,8 +125,9 @@ function App() {
           </div>
         </section>
 
+        <Wave from='#fff' to='#fff5f2' />
         {/* ── 商用利用OK section ── */}
-        <section style={{ background: 'linear-gradient(160deg, #fff5f2 0%, #fdf0f8 50%, #fff8f2 100%)', padding: '72px 32px' }}>
+        <section style={{ background: 'linear-gradient(160deg, #fff5f2 0%, #fdf0f8 50%, #fff5f2 100%)', padding: '48px 32px 72px' }}>
           <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ fontSize: '11px', letterSpacing: '0.25em', color: pink, marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
               Commercial Use
@@ -158,8 +168,9 @@ function App() {
           </div>
         </section>
 
+        <Wave from='#fff5f2' to={bgAlt} />
         {/* Before / After */}
-        <section style={{ background: bgAlt, padding: '80px 32px' }}>
+        <section style={{ background: bgAlt, padding: '48px 32px 80px' }}>
           <div style={{ maxWidth: '960px', margin: '0 auto' }}>
             <p style={{ textAlign: 'center', fontSize: '11px', letterSpacing: '0.2em', color: pink, marginBottom: '12px', textTransform: 'uppercase', fontWeight: 700 }}>
               Before / After
@@ -214,8 +225,9 @@ function App() {
           </div>
         </section>
 
+        <Wave from='#fff' to={bgAlt} />
         {/* Pricing */}
-        <section style={{ background: bgAlt, padding: '80px 32px' }}>
+        <section style={{ background: bgAlt, padding: '48px 32px 80px' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <p style={{ textAlign: 'center', fontSize: '11px', letterSpacing: '0.2em', color: pink, marginBottom: '12px', textTransform: 'uppercase', fontWeight: 700 }}>
               料金
@@ -293,8 +305,8 @@ function App() {
                   </div>
 
                   {/* Regular price */}
-                  <p style={{ fontSize: '12px', color: '#bbb', margin: '0 0 2px', textDecoration: 'line-through' }}>{plan.regularTotal}（税込）</p>
-                  <p style={{ fontSize: '11px', color: '#d0d0d0', margin: '0 0 8px', textDecoration: 'line-through' }}>{plan.regularPer}</p>
+                  <p style={{ fontSize: '13px', color: '#aaa', margin: '0 0 2px', textDecoration: 'line-through' }}>通常 {plan.regularTotal}（税込）</p>
+                  <p style={{ fontSize: '11px', color: '#bbb', margin: '0 0 10px', textDecoration: 'line-through' }}>{plan.regularPer}</p>
 
                   {/* Campaign price */}
                   <p style={{ fontSize: '26px', fontWeight: 700, margin: '0 0 4px', color: plan.highlight ? coral : plan.badgeColor === pink ? pink : textColor }}>{plan.campaignTotal}</p>
@@ -327,8 +339,9 @@ function App() {
           </div>
         </section>
 
+        <Wave from={bgAlt} to='#fff' />
         {/* How it works */}
-        <section style={{ maxWidth: '680px', margin: '0 auto', padding: '80px 32px' }}>
+        <section style={{ maxWidth: '680px', margin: '0 auto', padding: '48px 32px 80px' }}>
           <p style={{ textAlign: 'center', fontSize: '11px', letterSpacing: '0.2em', color: pink, marginBottom: '12px', textTransform: 'uppercase', fontWeight: 700 }}>
             ご利用の流れ
           </p>
@@ -353,8 +366,9 @@ function App() {
           </div>
         </section>
 
+        <Wave from='#fff' to={bgAlt} />
         {/* Final CTA */}
-        <section style={{ background: bgAlt, padding: '80px 32px 100px', textAlign: 'center' }}>
+        <section style={{ background: bgAlt, padding: '48px 32px 100px', textAlign: 'center' }}>
           <p style={{ fontSize: '11px', letterSpacing: '0.2em', color: pink, marginBottom: '16px', textTransform: 'uppercase', fontWeight: 700 }}>
             まずは気軽に
           </p>

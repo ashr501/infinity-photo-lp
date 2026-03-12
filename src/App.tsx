@@ -141,29 +141,44 @@ function App() {
             </p>
 
             {/* Use cases grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px', marginBottom: '40px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '14px', marginBottom: '40px' }}>
               {[
-                { icon: '🛒', label: 'ECサイト', sub: '商品ページに即掲載' },
-                { icon: '📸', label: 'Instagram', sub: 'フィード・ストーリーズ' },
-                { icon: '𝕏', label: 'X（Twitter）', sub: '広告・有機投稿' },
-                { icon: '💬', label: 'LINE公式', sub: 'リッチメッセージ' },
-                { icon: '📄', label: 'チラシ・DM', sub: '印刷物にも使用可' },
-                { icon: '📦', label: 'カタログ', sub: '商品カタログ・冊子' },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>,
+                  label: 'ECサイト',
+                },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill={coral}/></svg>,
+                  label: 'Instagram',
+                },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill={coral}><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>,
+                  label: 'X / Twitter',
+                },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>,
+                  label: 'LINE公式',
+                },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
+                  label: 'チラシ・DM',
+                },
+                {
+                  svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>,
+                  label: 'カタログ',
+                },
               ].map((item) => (
-                <div key={item.label} style={{ background: '#fff', borderRadius: '16px', padding: '20px 12px', boxShadow: '0 2px 16px rgba(242,168,188,0.12)', border: '1px solid rgba(242,168,188,0.2)' }}>
-                  <div style={{ fontSize: '28px', marginBottom: '8px' }}>{item.icon}</div>
-                  <p style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 700, color: textColor }}>{item.label}</p>
-                  <p style={{ margin: 0, fontSize: '11px', color: muted }}>{item.sub}</p>
+                <div key={item.label} style={{ background: '#fff', borderRadius: '16px', padding: '20px 12px', boxShadow: '0 2px 16px rgba(242,168,188,0.1)', border: '1px solid rgba(242,168,188,0.2)', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>{item.svg}</div>
+                  <p style={{ margin: 0, fontSize: '13px', fontWeight: 700, color: textColor }}>{item.label}</p>
                 </div>
               ))}
             </div>
 
-            {/* Copyright note */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: '#fff', border: `1px solid ${peach}`, borderRadius: '30px', padding: '12px 28px' }}>
-              <span style={{ fontSize: '18px' }}>©️</span>
-              <span style={{ fontSize: '13px', color: '#555' }}>
-                著作権は納品と同時にお客様へ移転。再販・転用もご自由に。
-              </span>
+            {/*著作権バッジ */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#fff', border: `1px solid ${peach}`, borderRadius: '30px', padding: '10px 24px' }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={coral} strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M14.83 14.83a4 4 0 110-5.66"/></svg>
+              <span style={{ fontSize: '13px', color: '#555', fontWeight: 500 }}>著作権は納品後、100%お客様に帰属</span>
             </div>
           </div>
         </section>
@@ -305,8 +320,8 @@ function App() {
                   </div>
 
                   {/* Regular price */}
-                  <p style={{ fontSize: '13px', color: '#aaa', margin: '0 0 2px', textDecoration: 'line-through' }}>通常 {plan.regularTotal}（税込）</p>
-                  <p style={{ fontSize: '11px', color: '#bbb', margin: '0 0 10px', textDecoration: 'line-through' }}>{plan.regularPer}</p>
+                  <p style={{ fontSize: '13px', color: '#777', margin: '0 0 2px', textDecoration: 'line-through' }}>通常 {plan.regularTotal}（税込）</p>
+                  <p style={{ fontSize: '11px', color: '#888', margin: '0 0 10px', textDecoration: 'line-through' }}>{plan.regularPer}</p>
 
                   {/* Campaign price */}
                   <p style={{ fontSize: '26px', fontWeight: 700, margin: '0 0 4px', color: plan.highlight ? coral : plan.badgeColor === pink ? pink : textColor }}>{plan.campaignTotal}</p>
@@ -332,7 +347,7 @@ function App() {
               <p style={{ textAlign: 'center', fontSize: '12px', color: muted, margin: 0 }}>
                 修正は写真1枚につき対応 ／ お試し・プレミアムは2回、ライト・スタンダードは1回
               </p>
-              <p style={{ textAlign: 'center', fontSize: '11px', color: '#bbb', margin: 0 }}>
+              <p style={{ textAlign: 'center', fontSize: '11px', color: '#888', margin: 0 }}>
                 ※ 表示価格はすべて税込 ／ キャンペーン価格は予告なく終了する場合があります
               </p>
             </div>
@@ -382,12 +397,12 @@ function App() {
           <a href={LINE_URL} target="_blank" rel="noreferrer" style={{ ...btnFilled, fontSize: '16px', padding: '18px 52px', borderRadius: '30px' }}>
             LINEで注文する →
           </a>
-          <p style={{ fontSize: '12px', color: muted, marginTop: '20px' }}>24時間以内に納品 / 返金保証なし / 修正1回無料</p>
+          <p style={{ fontSize: '12px', color: '#777', marginTop: '20px' }}>24時間以内に納品 / 修正対応あり / 商用利用OK</p>
         </section>
 
         {/* Footer */}
         <footer style={{ borderTop: `1px solid #f5ede9`, padding: '32px', textAlign: 'center' }}>
-          <p style={{ margin: 0, fontSize: '12px', color: '#bbb' }}>© 2026 & Infinity — AI Product Photography</p>
+          <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>© 2026 & Infinity — AI Product Photography</p>
         </footer>
 
       </div>

@@ -364,7 +364,7 @@ function App() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {[
               { step: '01', title: 'LINEで相談', desc: 'ボタンからアカウントを追加。枚数や仕上がりのご要望をお聞かせください' },
-              { step: '02', title: 'お支払い', desc: 'ご確認後、決済リンクをLINEでお送りします。クレジットカード・各種決済対応' },
+              { step: '02', title: 'お支払い', desc: 'ご確認後、決済リンクをLINEでお送りします。クレジットカード・PayPay・各種決済対応' },
               { step: '03', title: '写真を送る', desc: 'お支払い完了後、マネキン・ハンガーで撮影した商品写真をLINEに送信' },
               { step: '04', title: '24時間以内に納品', desc: 'AIが処理した高品質な写真をLINEでお届け' },
             ].map((item, idx) => (
